@@ -1,0 +1,42 @@
+.myclass {
+	padding:30px;
+	background-color: #000000;
+}
+
+.messagebox{
+	border-radius:20px;
+	background-color: WHITE;
+	border-color:Red;
+	border-style:solid;
+	border-width: 2px;
+	min-height:100px;
+	margin-top:10px;
+}
+.messagebox_header{
+	border-bottom-width:2px;
+	border-bottom-style: solid;
+	border-bottom-color: Red;
+}
+.messagebox_buttons{
+	border-top-width:2px;
+	border-top-style: solid;
+	border-top-color: Red;
+}
+
+.like{
+	min-height:30px;
+	background-color:#00F024;
+	-webkit-border-bottom-left-radius: 17px;
+	-moz-border-radius-bottomright: 17px;
+	border-bottom-left-radius: 17px;
+}
+.dislike{
+	min-height:30px;
+	background-color:#FF0000;
+	-webkit-border-bottom-right-radius: 17px;
+	-moz-border-radius-bottomright: 17px;
+	border-bottom-right-radius: 17px;
+}
+.messagebox_content{
+	max-height:300px;
+}
