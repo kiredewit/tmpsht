@@ -40,3 +40,7 @@
 .messagebox_content{
 	max-height:300px;
 }
+#footer{
+	position: absolute;
+	bottom:0px;
+}
