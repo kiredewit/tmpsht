@@ -1,6 +1,6 @@
 	function slideDiv(target){
 		if ( $( "#"+target ).is( ":hidden" ) ) {
-			$( "#"+target ).slideDown( "slow" );
+			$( "#"+target ).slideDown( "fast" );
 		} 
 		else {
 			$( "#"+target ).slideUp( "fast" );
@@ -21,7 +21,5 @@
 			})
 		}
 	}
-	
-	$('body').css('overflow','hidden');
-	$('body').css('position','fixed')
+
 	

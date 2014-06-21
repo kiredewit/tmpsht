@@ -1,6 +1,7 @@
 .myclass {
 	padding:30px;
 	background-color: #000000;
+	overflow-y:scroll;
 }
 
 .messagebox{
@@ -40,3 +41,10 @@
 .messagebox_content{
 	max-height:300px;
 }
+#btnShout {
+	color:BLACK;
+	font-weight:900;
+	font-size:large;
+	text-decoration:underline;
+	text-shadow: 1px 1px #ff0000;
+	}
