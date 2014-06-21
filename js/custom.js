@@ -22,5 +22,6 @@
 		}
 	}
 	
-	
+	$('body').css('overflow','hidden');
+	$('body').css('position','fixed')
 	
