@@ -114,13 +114,14 @@
 	<nav class="navbar-wrapper navbar-default navbar-fixed-bottom" role="navigation">
 	  <div class="row">
 		<div id="btnShout" class="col-xs-12 col-md-12" align="center" style="cursor:pointer;" ontouchstart="slideDiv('m')" onclick="slideDiv('LiveQuotiontionBox_1')" >SHOUT</div>
-		<div id="LiveQuotiontionBox_1" style="display:none; margin-top:5px;">
-			<div class="row">
-			<div class="col-xs-12 col-md-12">Bericht:<div>
+		<div id="LiveQuotiontionBox_1" style="display:none; margin:20px 20px 0px 20px;">
+			<div class="row" style="margin-right:3px;">
+			<div class="col-xs-11 col-md-11">Bericht:</div>
+			<div class="col-xs-1 col-md-1" align="right"><span onclick="capturePhoto();" class="glyphicon glyphicon-camera" style="font-size:20px;"></span></div>
 			</div>
 			
 			<div class="row">
-				<div class="col-xs-12 col-md-12" style="padding:10px">
+				<div class="col-xs-12 col-md-12" style="">
 					<textarea class="form-control" rows="3"></textarea>
 				</div>
 			</div>
@@ -140,6 +141,8 @@
 	<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-      <script src="js/custom.js"></script>
+    <script src="js/custom.js"></script>
+	<script src="js/function_camera.js"></script>  
+	  
   </body>
 </html>
