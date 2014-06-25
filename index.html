@@ -16,6 +16,17 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script>
+        var messages;
+		jQuery.noConflict(); 
+		jQuery(document).ready(function () { // JQuery not loaded here, $ is undefined
+            	messages = new cls_messages();	
+				jQuery( "#submitMessage" ).click(function() {
+						addMessage('0','asdasdasd');
+				});
+        });
+		</script>
   </head>
   <body style="overflow-x:hidden;width:100%;height:100%">
 	<div class="container-fluid" style="height:100%">
@@ -127,7 +138,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-md-12">
-					<button type="button" class="btn btn-default" style="width:100%" ontouchstart="addMessage()">Submit</button>
+					<button type="button" class="btn btn-default" style="width:100%" id="submitMessage">Submit</button>
 				</div>
 			</div>
 		</div>	
@@ -137,13 +148,14 @@
 	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="cordova.js"></script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
 	<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
 	<script src="js/function_camera.js"></script>
 	<script src="js/prototype.js"></script>	
+	<script src="js/class_message.js"></script>	
 	<script src="js/functions.js"></script>	
   </body>
 </html>

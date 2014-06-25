@@ -1,22 +1,22 @@
 	function slideDiv(target){
-		if ( $( "#"+target ).is( ":hidden" ) ) {
-			$( "#"+target ).slideDown( "fast" );
+		if ( jQuery( "#"+target ).is( ":hidden" ) ) {
+			jQuery( "#"+target ).slideDown( "fast" );
 		} 
 		else {
-			$( "#"+target ).slideUp( "fast" );
+			jQuery( "#"+target ).slideUp( "fast" );
 		}
 		
 		//if(prev != target && prev !=""){
-		//	$( "#"+prev ).slideUp( "fast" );
+		//	jQuery( "#"+prev ).slideUp( "fast" );
 		//}
 		//prev = target;
-		//$( "#LiveQuotiontionBox_1").slideDown( "slow", function() {});
+		//jQuery( "#LiveQuotiontionBox_1").slideDown( "slow", function() {});
 		// Animation complete.
 	}
 	
 	shoutMenu = {
 		openMenu: function(gridid){
-			$(gridid).animate({
+			jQuery(gridid).animate({
 				
 			})
 		}

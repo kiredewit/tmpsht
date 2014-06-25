@@ -25,7 +25,7 @@
 	var cls_messages = Class.create();
 	cls_messages.prototype = {
 		initialize : function(){
-			this.messages = new array();
+			this.messages = new Array();
 		},
 		addMessage : function(username,tag,message,time,like,dislike,location){
 			var message = new cls_message();
@@ -33,17 +33,20 @@
 			this.messages.push(message);
 		},
 		uploadMessage : function(userid,message){
-		$.ajax({
+		jQuery.ajax({
 			type: "POST",
 			async : "false",
-			url: "api/addMessage.php",
+			url: "http://erikwwj53.fiftythree.axc.nl/shout/api/addMessage.php",
 			data: {
 				userid: userid,
-				message: reference
+				message: message
 			},
 			success: function( data ) {
-				
-			}	
+				console.log("SUCCES");
+			},
+			error: function(data){
+				console.log(data);
+			}			
 			});
 		}
 	}
