@@ -42,13 +42,33 @@
 				message: message
 			},
 			success: function( data ) {
+				this.drawMessage();
 				console.log("SUCCES");
 			},
 			error: function(data){
 				console.log(data);
 			}			
 			});
+		},
+		drawMessage : function(){
+			jQuery('<div class="row">\
+				<div class="col-xs-12 col-md-12 messagebox">\
+					<div class="row messagebox_header">\
+						<div class="col-md-3" align="left">Time: 22:36 - 33 min ago</div>\
+						<div class="col-md-3" align="center":>user: annomyous</div>\
+						<div class="col-md-3" align="right">location: Amsterdam </div>\
+						<div class="col-md-3" align="right">Likes: 11 | Dislike: 2 </div>\
+					</div>	\
+					<div class="row">\
+						<div class="col-xs-12 col-md-12" align="left">contentasd sada<br>asdasdasdasdasdadasdasd<br>asdasdasdasdasdsds</div>\
+					</div>\
+					<div class="row messagebox_buttons">\
+						<div class="col-xs-6 col-md-6 like" align="center">Like</div>\
+						<div class="col-xs-6 col-md-6 dislike" align="center">Dislike</div>\
+					</div>\
+				</div>\
+			</div>' ).prependTo( '#content' ).hide().show('slow');;
 		}
 	}
-	
+
 	

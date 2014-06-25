@@ -21,9 +21,10 @@
         var messages;
 		jQuery.noConflict(); 
 		jQuery(document).ready(function () { // JQuery not loaded here, $ is undefined
-            	messages = new cls_messages();	
+            	messages = new cls_messages();
+				messages.drawMessage();
 				jQuery( "#submitMessage" ).click(function() {
-						addMessage('0','asdasdasd');
+						addMessage('annoniem',jQuery('#message').val());
 				});
         });
 		</script>
@@ -33,93 +34,7 @@
 	<div class="row" style="height:5%">
 		<div class="col-xs-12 col-md-12" align="center" style="background-color:WHITE;height:100%;">Header</div>
 	</div>
-	<div class="row myclass" style="height:95%">
-			<div class="row"  >
-				<div class="col-xs-12 col-md-12 messagebox">
-					<div class="row messagebox_header">
-						<div class="col-md-3" align="left">Time: 22:36 - 33 min ago</div>
-						<div class="col-md-3" align="center":>user: annomyous</div>
-						<div class="col-md-3" align="right">location: Amsterdam </div>
-						<div class="col-md-3" align="right">Likes: 11 | Dislike: 2 </div>
-					</div>	
-					<div class="row">
-						<div class="col-xs-12 col-md-12" align="left">contentasd sada<br>asdasdasdasdasdadasdasd<br>asdasdasdasdasdsds</div>
-					</div>
-					<div class="row messagebox_buttons">
-						<div class="col-xs-6 col-md-6 like" align="center">Like</div>
-						<div class="col-xs-6 col-md-6 dislike" align="center">Dislike</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="row"  >
-					<div class="col-xs-12 col-md-12 messagebox">
-						<div class="row">
-							<div class="col-md-4" align="left">Time: 22:36 - 33 min ago</div>
-							<div class="col-md-4" align="center":>user: annomyous</div>
-							<div class="col-md-4" align="right">location: Amsterdam </div>
-						</div>	
-						<div class="row">
-							<div class="col-xs-12 col-md-12 messagebox_content"><img src="img/test.jpg" height="280px"></img></div>
-						</div>
-						<div class="row messagebox_buttons">
-							<div class="col-xs-6 col-md-6 like" align="center">Like</div>
-							<div class="col-xs-6 col-md-6 dislike" align="center">Dislike</div>
-						</div>
-					</div>	
-			</div>
-			<div class="row"  >
-				<div class="col-xs-12 col-md-12 messagebox">
-					<div class="row messagebox_header">
-						<div class="col-md-3" align="left">Time: 22:36 - 33 min ago</div>
-						<div class="col-md-3" align="center":>user: annomyous</div>
-						<div class="col-md-3" align="right">location: Amsterdam </div>
-						<div class="col-md-3" align="right">Likes: 11 | Dislike: 2 </div>
-					</div>	
-					<div class="row">
-						<div class="col-xs-12 col-md-12" align="left">contentasd sada<br>asdasdasdasdasdadasdasd<br>asdasdasdasdasdsds</div>
-					</div>
-					<div class="row messagebox_buttons">
-						<div class="col-xs-6 col-md-6 like" align="center">Like</div>
-						<div class="col-xs-6 col-md-6 dislike" align="center">Dislike</div>
-					</div>
-				</div>
-			</div>	
-			<div class="row"  >
-				<div class="col-xs-12 col-md-12 messagebox">
-					<div class="row messagebox_header">
-						<div class="col-md-3" align="left">Time: 22:36 - 33 min ago</div>
-						<div class="col-md-3" align="center":>user: annomyous</div>
-						<div class="col-md-3" align="right">location: Amsterdam </div>
-						<div class="col-md-3" align="right">Likes: 11 | Dislike: 2 </div>
-					</div>	
-					<div class="row">
-						<div class="col-xs-12 col-md-12" align="left">contentasd sada<br>asdasdasdasdasdadasdasd<br>asdasdasdasdasdsds</div>
-					</div>
-					<div class="row messagebox_buttons">
-						<div class="col-xs-6 col-md-6 like" align="center">Like</div>
-						<div class="col-xs-6 col-md-6 dislike" align="center">Dislike</div>
-					</div>
-				</div>
-			</div>
-			<div class="row"  >
-				<div class="col-xs-12 col-md-12 messagebox">
-					<div class="row messagebox_header">
-						<div class="col-md-3" align="left">Time: 22:36 - 33 min ago</div>
-						<div class="col-md-3" align="center":>user: annomyous</div>
-						<div class="col-md-3" align="right">location: Amsterdam </div>
-						<div class="col-md-3" align="right">Likes: 11 | Dislike: 2 </div>
-					</div>	
-					<div class="row">
-						<div class="col-xs-12 col-md-12" align="left">contentasd sada<br>asdasdasdasdasdadasdasd<br>asdasdasdasdasdsds</div>
-					</div>
-					<div class="row messagebox_buttons">
-						<div class="col-xs-6 col-md-6 like" align="center">Like</div>
-						<div class="col-xs-6 col-md-6 dislike" align="center">Dislike</div>
-					</div>
-				</div>
-			</div>				
-		
+	<div class="row myclass" style="height:95%" id="content">
 	</div> 
 	</div>
 	<nav class="navbar-wrapper navbar-default navbar-fixed-bottom" role="navigation">
@@ -133,7 +48,7 @@
 			
 			<div class="row">
 				<div class="col-xs-12 col-md-12" style="">
-					<textarea class="form-control" rows="3"></textarea>
+					<textarea class="form-control" rows="3" id="message"></textarea>
 				</div>
 			</div>
 			<div class="row">
