@@ -6,7 +6,7 @@ function uploadPhoto(data){
 // this is where you would send the image file to server
  
 //output image to screen
-    cameraPic.src = "data:image/jpeg;base64," + data;
+cameraPic.src = "data:image/jpeg;base64," + data;
 
 navigator.notification.alert(
     'Your Photo has been uploaded', // message
@@ -29,3 +29,5 @@ if (failedToUpload){
 function okay(){
 	console.log("aa");
 }
+
+function printLog(){ console.log("Hellos from weinre"); }
