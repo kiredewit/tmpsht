@@ -28,12 +28,13 @@
 			this.messages = new Array();
 		},
 		addMessage : function(username,tag,message,time,like,dislike,location){
-			console.log("AddMessage");
+		console.log("Add Message");
 			var message = new cls_message();
 			message.setMessage('0',username,tag,message,time,like,dislike,location);
 			this.messages.push(message);
 		},
 		uploadMessage : function(userid,message){
+		console.log("Upload Message");
 		jQuery.ajax({
 			type: "POST",
 			async : "false",
