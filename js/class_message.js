@@ -28,6 +28,7 @@
 			this.messages = new Array();
 		},
 		addMessage : function(username,tag,message,time,like,dislike,location){
+			console.log("AddMessage");
 			var message = new cls_message();
 			message.setMessage('0',username,tag,message,time,like,dislike,location);
 			this.messages.push(message);

@@ -21,9 +21,19 @@
         var messages;
 		jQuery.noConflict(); 
 		jQuery(document).ready(function () { // JQuery not loaded here, $ is undefined
-            	messages = new cls_messages();
+            	jQuery.support.cors = true;
+				
+				messages = new cls_messages();
 				messages.drawMessage();
+				
+			//	jQuery("#submitMessage").on("tap",function(e){
+             //            
+			//			 $(this).trigger("click");
+              //           e.preventDefault();
+              //           return false;
+             //            });
 				jQuery( "#submitMessage" ).click(function() {
+						console.log("test");
 						addMessage('annoniem',jQuery('#message').val());
 				});
         });
