@@ -34,23 +34,24 @@
 			this.messages.push(message);
 		},
 		uploadMessage : function(userid,message){
-		console.log("Upload Message");
-		jQuery.ajax({
-			type: "POST",
-			async : "false",
-			url: "http://erikwwj53.fiftythree.axc.nl/shout/api/addMessage.php",
-			data: {
-				userid: userid,
-				message: message
-			},
-			success: function( data ) {
-				this.drawMessage();
-				console.log("SUCCES");
-			},
-			error: function(data){
-				console.log(data);
-			}			
-			});
+			console.log("Upload Message");
+			jQuery.ajax({
+				type: "POST",
+				async : "false",
+				url: "http://erikwwj53.fiftythree.axc.nl/shout/api/addMessage.php",
+				crossDomain: true,
+				data: {
+					userid: userid,
+					message: message
+				},
+				success: function( data ) {
+					this.drawMessage();
+					console.log("SUCCES");
+				},
+				error: function(data){
+					console.log(data);
+				}			
+				});
 		},
 		drawMessage : function(){
 			jQuery('<div class="row">\
