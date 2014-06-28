@@ -20,18 +20,9 @@
 		<script>
         var messages;
 		jQuery.noConflict(); 
-		jQuery(document).ready(function () { // JQuery not loaded here, $ is undefined
-            //	jQuery.support.cors = true;
-				
+		jQuery(document).ready(function () { // JQuery not loaded here, $ is undefined				
 				messages = new cls_messages();
-				messages.drawMessage();
-				
-			//	jQuery("#submitMessage").on("tap",function(e){
-            //            
-			//			 $(this).trigger("click");
-            //           e.preventDefault();
-            //           return false;
-            //            });
+				messages.drawAllMessages();
 				jQuery( "#submitMessage" ).click(function() {
 						console.log("test");
 						addMessage('annoniem',jQuery('#message').val());
