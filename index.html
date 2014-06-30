@@ -23,9 +23,12 @@
 		jQuery(document).ready(function () { // JQuery not loaded here, $ is undefined				
 				messages = new cls_messages();
 				messages.drawAllMessages();
+				
 				jQuery( "#submitMessage" ).click(function() {
-						console.log("test");
-						addMessage('annoniem',jQuery('#message').val());
+						var message = new cls_message();
+						message.setMessage('','annoniem','#ASD',jQuery('#message').val(),'','','','Amsterdam');
+						
+						addMessage(message);
 				});
         });
 		</script>

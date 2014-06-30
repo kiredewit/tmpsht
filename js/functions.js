@@ -1,5 +1,4 @@
-function addMessage(userid,message){
+function addMessage(message){
 	console.log("AddMessage Start");
-	//messages.drawMessage();
-	messages.uploadMessage(userid,message);
+	messages.uploadMessage(message);
 }

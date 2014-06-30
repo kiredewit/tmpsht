@@ -39,7 +39,7 @@
 					url: "http://erikwwj53.fiftythree.axc.nl/shout/api/getMessages.php",
 					crossDomain: true,
 					success: function( data ) {
-						console.log(data);
+						//console.log(data);
 						console.log("SUCCES");
 						Jdata = jQuery.parseJSON(data);
 						return jData;
@@ -53,9 +53,9 @@
 			
 			Jdata = getData();
 			
-			console.log(Jdata.length);
+			//console.log(Jdata.length);
 			for(i = 0; i < Jdata.length; i++){
-				console.log(Jdata[i]['message']);
+				//console.log(Jdata[i]['message']);
 				this.addMessage('annoniem','TESTTAG',Jdata[i]['message'],'0','0','0','Amsterdam')
 			}
 			
@@ -67,18 +67,17 @@
 			clsmessage.setMessage('0',username,tag,message,time,like,dislike,location);
 			this.messages.push(clsmessage);
 		},
-		uploadMessage : function(userid,message){
+		uploadMessage : function(message){
 			console.log("Upload Message");
 			var jdata;
-			
+			//console.log(JSON.stringify(message));
 			jQuery.ajax({
 				type: "POST",
 				async : false,
 				url: "http://erikwwj53.fiftythree.axc.nl/shout/api/addMessage.php",
 				crossDomain: true,
 				data: {
-					userid: userid,
-					message: message
+					data : JSON.stringify(message)
 				},
 				success: function( data ) {
 					jdata = data;
@@ -102,10 +101,10 @@
 			jQuery('<div class="row">\
 				<div class="col-xs-12 col-md-12 messagebox">\
 					<div class="row messagebox_header">\
-						<div class="col-md-3" align="left">'+ message.time +'</div>\
-						<div class="col-md-3" align="center":>user: '+ message.username +'</div>\
-						<div class="col-md-3" align="right">location: '+ message.location +' </div>\
-						<div class="col-md-3" align="right">Likes: ' + message.like + ' | Dislike: ' + message.dislike +' </div>\
+						<div class="col-xs-3 col-md-3" align="left">'+ message.time +'</div>\
+						<div class="col-xs-3 col-md-3" align="center":>user: '+ message.username +'</div>\
+						<div class="col-xs-3 col-md-3" align="right">location: '+ message.location +' </div>\
+						<div class="col-xs-3 col-md-3" align="right">Likes: ' + message.like + ' | Dislike: ' + message.dislike +' </div>\
 					</div>	\
 					<div class="row">\
 						<div class="col-xs-12 col-md-12" align="left">' + message.message + '</br></br></br></div>\
