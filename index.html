@@ -27,7 +27,7 @@
 				jQuery( "#submitMessage" ).click(function() {
 						var message = new cls_message();
 						message.setMessage('','annoniem','#ASD',jQuery('#message').val(),'','','','Amsterdam');
-						
+						SoftKeyboard.show();
 						addMessage(message);
 				});
         });
@@ -52,7 +52,7 @@
 			
 			<div class="row">
 				<div class="col-xs-12 col-md-12" style="">
-					<textarea class="form-control" rows="3" id="message"></textarea>
+					<textarea class="form-control" input="text" rows="3" id="message"></textarea>
 				</div>
 			</div>
 			<div class="row">
