@@ -19,6 +19,12 @@
 			this.like = like;
 			this.dislike = dislike;
 			this.location = location;
+		},
+		giveLike : function(){
+			this.like = this.like + 1;
+		},
+		giveDislike: function(){
+			this.dislike = this.dislike + 1;
 		}
 	}
 	
@@ -56,15 +62,15 @@
 			//console.log(Jdata.length);
 			for(i = 0; i < Jdata.length; i++){
 				//console.log(Jdata[i]['message']);
-				this.addMessage('annoniem','TESTTAG',Jdata[i]['message'],'0','0','0','Amsterdam')
+				this.addMessage('2','annoniem','TESTTAG',Jdata[i]['message'],'0','0','0','Amsterdam')
 			}
 			
 			
 		},
-		addMessage : function(username,tag,message,time,like,dislike,location){
+		addMessage : function(id,username,tag,message,time,like,dislike,location){
 			console.log("Add Message");
 			var clsmessage = new cls_message();
-			clsmessage.setMessage('0',username,tag,message,time,like,dislike,location);
+			clsmessage.setMessage(id,username,tag,message,time,like,dislike,location);
 			this.messages.push(clsmessage);
 		},
 		uploadMessage : function(message){
@@ -96,6 +102,10 @@
 				
 				this.drawAddMessage(clsmessage);
 		},
+		setLike : function(){
+			
+		}
+		,
 		drawAddMessage : function(message){
 			console.log("Add message on screen");
 			jQuery('<div class="row">\
@@ -110,8 +120,8 @@
 						<div class="col-xs-12 col-md-12" align="left">' + message.message + '</br></br></br></div>\
 					</div>\
 					<div class="row messagebox_buttons">\
-						<div class="col-xs-6 col-md-6 like" align="center">Like</div>\
-						<div class="col-xs-6 col-md-6 dislike" align="center">Dislike</div>\
+						<div class="buttonlikes col-xs-6 col-md-6 like" align="center" id="like_'+ message.id +'">Like</div>\
+						<div class="buttonlikes col-xs-6 col-md-6 dislike" align="center" id="dislike_' + message.id + '">Dislike</div>\
 					</div>\
 				</div>\
 			</div>' ).prependTo( '#content' ).hide().show('slow');;
