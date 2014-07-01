@@ -31,11 +31,8 @@
 				});
 				jQuery( ".buttonlikes" ).click(function() {
 						console.log(this.id);
-						//alert();
-						
-						//var message = new cls_message();
-						//message.setMessage('','annoniem','#ASD',jQuery('#message').val(),'','','','Amsterdam');
-						//addMessage(message);
+						var spllike = this.id.split("_");
+						messages.giveLike(spllike[0],spllike[1]);
 				});
         });
 		</script>

@@ -21,10 +21,45 @@
 			this.location = location;
 		},
 		giveLike : function(){
+			console.log("Add 1 Like");
 			this.like = this.like + 1;
+			
+			jQuery.ajax({
+					type: "POST",
+					data: {
+						msgid : this.id,
+						like: "like"
+					},
+					async : false,
+					url: "http://erikwwj53.fiftythree.axc.nl/shout/api/giveLike.php",
+					crossDomain: true,
+					success: function( data ) {				
+						console.log("SUCCES");
+							},
+					error: function(data){
+						console.log(data);
+					}			
+				})
 		},
 		giveDislike: function(){
+			console.log("Add 1 DisLike");
 			this.dislike = this.dislike + 1;
+						jQuery.ajax({
+					type: "POST",
+					data: {
+						msgid : this.id,
+						like: "like"
+					},
+					async : false,
+					url: "http://erikwwj53.fiftythree.axc.nl/shout/api/giveLike.php",
+					crossDomain: true,
+					success: function( data ) {				
+						console.log("SUCCES");
+							},
+					error: function(data){
+						console.log(data);
+					}			
+				})
 		}
 	}
 	
@@ -62,7 +97,7 @@
 			//console.log(Jdata.length);
 			for(i = 0; i < Jdata.length; i++){
 				//console.log(Jdata[i]['message']);
-				this.addMessage('2','annoniem','TESTTAG',Jdata[i]['message'],'0','0','0','Amsterdam')
+				this.addMessage(Jdata[i]['id'],Jdata[i]['userid'],Jdata[i]['tag'],Jdata[i]['message'],Jdata[i]['time'],Jdata[i]['like'],Jdata[i]['dislike'],Jdata[i]['location'])
 			}
 			
 			
@@ -102,10 +137,18 @@
 				
 				this.drawAddMessage(clsmessage);
 		},
-		setLike : function(){
+		giveLike : function(like,msgid){
+			var id = this.messages.inArray2(msgid,"id");
+			var message = new cls_message();
 			
-		}
-		,
+			message =  this.messages[id];
+			if(like == "like"){
+				message.giveLike();
+			}else
+			{
+				message.giveDislike();
+			}
+		}		,
 		drawAddMessage : function(message){
 			console.log("Add message on screen");
 			jQuery('<div class="row">\
